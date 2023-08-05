@@ -100,7 +100,7 @@ class MeList<T> : IEnumerable<T>
     }
     public void InsertRange(int index, IEnumerable<T> newItems)
     {
-        EnsureCapacity(Count + items.Count());
+        EnsureCapacity(Count + newItems.Count());
         // Shuffle everyone down the existing array
         //Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
         Array.Copy(items, index, items, index + newItems.Count(), Count - index);
@@ -147,7 +147,7 @@ class MainClass
         MeList<int> myPartyAges = new MeList<int>(5) { 32, 83, 99, 42, 31 }; // error: initial capacity (5) not enough for insert .... requires resize (EnsureCapacity Method)
         //myPartyAges.Insert(2, 25);
         //myPartyAges.InsertRange(2, new[] { 55, 65, 75 });   // Built-In implementation
-        myPartyAges.InsertRange(2, new[] { 55, 65, 75, });   // Built-In implementation
+        myPartyAges.InsertRange(2, new[] { 55, 65, 75, 75, 75, 75, 75, 75, 75, 75 });   
         foreach (int age in myPartyAges)
             Console.WriteLine(age);
 

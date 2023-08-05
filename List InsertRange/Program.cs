@@ -98,7 +98,7 @@ class MeList<T> : IEnumerable<T>
         Count++;
 
     }
-    public void InsertRange(int index, IEnumerable<T> newItems)
+    public void InsertRange(int index, IEnumerable<T> newItems) // Not Optimal
     {
         EnsureCapacity(Count + newItems.Count());
         // Shuffle everyone down the existing array
